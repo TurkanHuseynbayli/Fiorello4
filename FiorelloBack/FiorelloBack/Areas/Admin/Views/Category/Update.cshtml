@@ -1,0 +1,27 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update Category</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label asp-for="@Model.Name">Update Name</label>
+                    <input asp-for="@Model.Name" class="form-control" placeholder="Name">
+                    <span class="text-danger" asp-validation-for="@Model.Name"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Description">Category Description</label>
+                    <textarea asp-for="@Model.Description"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <a asp-action="Index" class="btn btn-light">Update</a>
+            </form>
+        </div>
+    </div>
+</div>
+

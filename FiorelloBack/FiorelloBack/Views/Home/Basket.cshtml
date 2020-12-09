@@ -1,0 +1,51 @@
+﻿@model List<BasketVM>
+@{
+    ViewData["Title"] = "Basket";
+    int count = Model.Count();
+}
+<div class="container">
+    <div class="row">
+        @if (count != 0)
+        {
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                       
+                        <th scope="col">Image</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Count</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (BasketVM pro in Model)
+                    {
+                    <tr>
+
+                        <td><img src="~/img/@pro.Image" width="200" /></td>
+
+                        <td>@pro.Title</td>
+                        <td>@pro.Count</td>
+                        <td>@pro.Price</td>
+                        <td> <a class="btn btn-outline-danger" asp-controller="Home" asp-action="RemoveItem" asp-route-id="@pro.Id"><i class="fas fa-trash"></i></a></td>
+
+                    </tr>
+                       
+                    }
+
+
+                </tbody>
+            </table>
+            <h2>Total:@ViewBag.Total</h2>
+        }
+        else
+        {
+            <h2>Sebet bosdur,<a asp-controller="Home" asp-action="Index">Buyurun mehsullara baxin</a></h2>
+
+        }
+
+    </div>
+</div>
+
+

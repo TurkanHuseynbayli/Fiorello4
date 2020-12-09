@@ -1,0 +1,15 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">@Model.Name</h4>
+           <div>@Html.Raw(Model.Description)</div>
+        </div>
+    </div>
+</div>
+<a asp-action="Index" class="btn btn-secondary">Go Back</a>
+

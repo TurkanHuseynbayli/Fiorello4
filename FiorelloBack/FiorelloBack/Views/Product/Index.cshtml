@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class ="container">
+    <div class="row" id="productList">
+        @*<partial name="_ProductPartial"/>*@
+        @await Component.InvokeAsync("Product",8)
+
+
+    </div>
+    <div class="row my-5 justify-content-center">
+        <input type="hidden" id="count" value="@ViewBag.ProCount"/>
+  <button class="btn btn-success btn-lg" id="loadMore">Load More...</button>
+    </div>
+</div>
+
